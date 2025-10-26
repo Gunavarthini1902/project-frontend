@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 4L4 10v12l12 6 12-6V10L16 4z" fill="#3B82F6"/>
+                        <circle cx="16" cy="16" r="4" fill="white"/>
+                    </svg>
+                    <h1>AI Learn</h1>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-view="overview">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item" data-view="courses">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    <span>Courses</span>
+                </a>
+                <a href="#" class="nav-item" data-view="progress">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="20" x2="12" y2="10"></line>
+                        <line x1="18" y1="20" x2="18" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                    <span>Progress</span>
+                </a>
+                <a href="#" class="nav-item" data-view="achievements">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                    <span>Achievements</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">AS</div>
+                    <div class="user-info">
+                        <div class="user-name">Gunavarthini K</div>
+                        <div class="user-role">Premium Member</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="Search courses, topics, or skills..." id="searchInput">
+                </div>
+                <div class="top-bar-actions">
+                    <button class="icon-button" id="notificationBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="icon-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area" id="contentArea">
+                <div class="view-container" id="overviewView">
+                    <div class="page-header">
+                        <h2>Learning Overview</h2>
+                        <p class="page-subtitle">Track your progress and continue learning</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Active Courses</div>
+                                <div class="stat-value" id="activeCourses">0</div>
+                                <div class="stat-change positive">+2 this month</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon green">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Learning Streak</div>
+                                <div class="stat-value" id="learningStreak">0</div>
+                                <div class="stat-change positive">Keep it up!</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon orange">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Hours Learned</div>
+                                <div class="stat-value" id="hoursLearned">0</div>
+                                <div class="stat-change positive">+8.5 this week</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon purple">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Achievements</div>
+                                <div class="stat-value" id="achievementsCount">0</div>
+                                <div class="stat-change positive">+3 unlocked</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-header">
+                        <h3>Continue Learning</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+
+                    <div class="course-grid" id="continueCoursesGrid"></div>
+
+                    <div class="section-header">
+                        <h3>Recommended for You</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+
+                    <div class="course-grid" id="recommendedCoursesGrid"></div>
+                </div>
+
+                <div class="view-container hidden" id="coursesView">
+                    <div class="page-header">
+                        <h2>All Courses</h2>
+                        <p class="page-subtitle">Explore and enroll in AI and machine learning courses</p>
+                    </div>
+
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="in-progress">In Progress</button>
+                            <button class="filter-btn" data-filter="completed">Completed</button>
+                            <button class="filter-btn" data-filter="recommended">Recommended</button>
+                        </div>
+                    </div>
+
+                    <div class="course-grid" id="allCoursesGrid"></div>
+                </div>
+
+                <div class="view-container hidden" id="progressView">
+                    <div class="page-header">
+                        <h2>Your Progress</h2>
+                        <p class="page-subtitle">Detailed view of your learning journey</p>
+                    </div>
+
+                    <div class="progress-cards" id="progressCards"></div>
+                </div>
+
+                <div class="view-container hidden" id="achievementsView">
+                    <div class="page-header">
+                        <h2>Achievements</h2>
+                        <p class="page-subtitle">Celebrate your learning milestones</p>
+                    </div>
+
+                    <div class="achievements-grid" id="achievementsGrid"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="notification-panel hidden" id="notificationPanel">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="close-btn" id="closeNotifications">×</button>
+        </div>
+        <div class="notification-list" id="notificationList"></div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
